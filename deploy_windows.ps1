@@ -197,4 +197,4 @@ if ($null -ne $GitConfigure.sshKeyPath) {
 }
 
 # 复制配置文件到用户目录
-Copy-Item -Path "dotfiles\*.*" -Destination $env:USERPROFILE -Recurse -Force
+Copy-Item -Path "dotfiles\*" -Destination $env:USERPROFILE -Recurse -Force

@@ -1,0 +1,7 @@
+[wsl2]
+networkingMode=mirrored
+
+[experimental]
+autoMemoryReclaim=dropcache 
+sparseVhd=true
+useWindowsDnsCache=true

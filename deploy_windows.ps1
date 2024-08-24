@@ -159,7 +159,7 @@ RefreshEnvironmentVariables
 
 ## 安装必须软件
 # Visual Studio 2022 Community
-winget install --id="Microsoft.VisualStudio.2022.Community" -e --overwrite "--passive --config .vsconfig" -h --accept-source-agreements --accept-package-agreements
+winget install --id="Microsoft.VisualStudio.2022.Community" -e --overwrite "--passive --config dotfiles/.vsconfig" -h --accept-source-agreements --accept-package-agreements
 # Miniconda3
 winget install --id="Anaconda.Miniconda3" -e -h --accept-source-agreements --accept-package-agreements --overwrite "/InstallationType=JustMe /RegisterPython=1 /AddToPath=1 /S"
 # Git
@@ -195,3 +195,6 @@ if ($null -ne $GitConfigure.sshKeyPath) {
     Write-Output "Copied to clipboard."
     Set-Clipboard -Value (Get-Content -Path $env:USERPROFILE\.ssh\id_ed25519.pub)
 }
+
+# 复制配置文件到用户目录
+Copy-Item -Path "dotfiles\*.*" -Destination $env:USERPROFILE -Recurse -Force
